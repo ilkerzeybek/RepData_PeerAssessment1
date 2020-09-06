@@ -25,7 +25,7 @@ are calcutated.
     aggregate_step_by_day <- aggregate(steps ~ date, data, sum, na.rm = T)
     hist(aggregate_step_by_day$steps, xlab = "Total Steps", main = "Histogram of Total Steps")
 
-<img src="proj1_files/figure-markdown_strict/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
+<img src="PA1_template_files/figure-markdown_strict/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 
     mean(aggregate_step_by_day$steps)
 
@@ -46,7 +46,7 @@ contains the maximum number of steps is found.
     plot(aggregate_maxstep_by_interval$interval, aggregate_maxstep_by_interval$steps,
          type = "l", ylab = "Average Number of Steps", xlab = "Interval")
 
-<img src="proj1_files/figure-markdown_strict/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+<img src="PA1_template_files/figure-markdown_strict/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
 
     maxstep_by_interval <- aggregate_maxstep_by_interval[which.max(aggregate_maxstep_by_interval$steps), 1]
     maxstep_by_interval
@@ -85,7 +85,7 @@ but it is mainly caused by the positions of missing values.
     hist(aggregate_step_by_day_filled$steps, main = "Total Number of Steps after Imputing",
          xlab = "Total Number of Steps")
 
-<img src="proj1_files/figure-markdown_strict/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+<img src="PA1_template_files/figure-markdown_strict/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
     mean(aggregate_step_by_day_filled$steps)
 
@@ -135,4 +135,4 @@ days.
     aggregated <- aggregate(steps ~ interval + day, data_filled, mean)
     xyplot(steps ~ interval | factor(day), data = aggregated, aspect = 1/2, type = "l")
 
-<img src="proj1_files/figure-markdown_strict/unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
+<img src="PA1_template_files/figure-markdown_strict/unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
